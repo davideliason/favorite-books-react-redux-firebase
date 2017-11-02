@@ -13,7 +13,7 @@ let logger = createLogger({
 	duration:true
 });
 
-const store = createStore(reducer, {color: "blue"}, applyMiddleware(thunk,logger));
+const store = createStore(reducer, {}, applyMiddleware(thunk,logger));
 
 store.dispatch({type:'SHOW_BOOKS'});
 console.log(store.getState());

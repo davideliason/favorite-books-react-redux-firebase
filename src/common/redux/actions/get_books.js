@@ -1,11 +1,11 @@
 import database from '../database.js';
 
-export function getBooks() {
+export default function getBooks() {
   return dispatch => {
     dispatch(getBooksRequestedAction());
     return database.ref('/').once('value', snap => {
-      const books = snap.val();
-      dispatch(getInviteFulfilledAction(books))
+      const books = snap.val(); // FB DB object
+      dispatch(getBooksFulfilledAction(books))
     })
     .catch((error) => {
       console.log(error);
@@ -27,7 +27,7 @@ function getBooksRejectedAction() {
   }
 }
 
-function getInviteFulfilledAction(books) {
+function getBooksFulfilledAction(books) {
   return {
     type: 'GetInviteFulfilled',
     books: books

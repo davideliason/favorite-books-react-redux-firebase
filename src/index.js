@@ -15,7 +15,7 @@ let logger = createLogger({
 
 const store = createStore(book_reducer, {}, applyMiddleware(thunk,logger));
 
-store.dispatch({type:'SHOW_BOOKS'}); // works correctly
-console.log(store.getState());
+// store.dispatch({type:'SHOW_BOOKS'}); // works correctly
+console.log("state" + store.getState());
 
 ReactDOM.render(<Provider store={store}><AppContainer /></Provider>, document.getElementById('root'));

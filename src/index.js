@@ -13,9 +13,9 @@ let logger = createLogger({
 	duration:true
 });
 
-const store = createStore(book_reducer, {color:"green"}, applyMiddleware(thunk,logger));
+const store = createStore(book_reducer, {}, applyMiddleware(thunk,logger));
 
-// store.dispatch({type:'SHOW_BOOKS'}); // works correctly
+store.dispatch({type:'SHOW_BOOKS'}); // works correctly
 console.log(store.getState());
 
 ReactDOM.render(<Provider store={store}><AppContainer /></Provider>, document.getElementById('root'));

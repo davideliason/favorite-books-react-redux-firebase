@@ -18,4 +18,4 @@ const store = createStore(reducer, {color: "blue"}, applyMiddleware(thunk,logger
 store.dispatch({type:'SHOW_BOOKS'});
 console.log(store.getState());
 
-ReactDOM.render(<Provider><App store={store} /></Provider>, document.getElementById('root'));
+ReactDOM.render(<Provider store={store}><App  /></Provider>, document.getElementById('root'));

@@ -31,6 +31,6 @@ function getBooksRejectedAction() {
 function getBooksFulfilledAction(books) {
   return {
     type: 'GetBooksFulfilled',
-    books: books.books
+    books: books
   };
 }

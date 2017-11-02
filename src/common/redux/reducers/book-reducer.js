@@ -19,7 +19,8 @@ export default function booksReducer(state={},action){
 			return Object.assign({},state,{
 				inProgress: false,
 				error: false,
-				books: action.books
+				books: action.books,
+				color: "green"
 			});
 		}
 		default:

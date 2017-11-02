@@ -4,7 +4,7 @@ import getBooks from '../redux/actions/get_books.js';
 
 function mapStateToProps(state){
 	return {
-		state: state
+		book_state: state
 	}
 }
 

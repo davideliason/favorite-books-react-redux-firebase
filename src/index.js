@@ -1,8 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+import App from './client/App.js';
+import {Provider} from 'react-redux';
+import {applyMiddleware,createStore} from 'redux';
+import {createLogger} from 'redux-logger';
+import thunk from 'redux-thunk';
+import reducer from './common/redux/reducers/book-reducer.js';
 
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+let logger = createLogger({
+	timestamp:true,
+	duration:true
+});
+
+const store = createStore(reducer, {color: "blue"}, applyMiddleware(thunk,logger));
+
+store.dispatch({type:'SHOW_BOOKS'});
+console.log(store.getState());
+
+ReactDOM.render(<Provider><App store={store} /></Provider>, document.getElementById('root'));

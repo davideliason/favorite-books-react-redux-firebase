@@ -8,14 +8,14 @@ export default function booksReducer(state={},action){
 			});
 		}
 
-		case 'GetInviteRejected': {
+		case 'GetBooksRejected': {
 			return Object.assign({},state,{
 				inProgress: false,
 				error: true
 			});
 		}
 
-		case 'GetInviteFulfilled': {
+		case 'GetBooksFulfilled': {
 			return Object.assign({},state,{
 				inProgress: false,
 				error: false,

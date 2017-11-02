@@ -1,0 +1,17 @@
+{
+	"slogan" : "read more",
+	"books" : {
+		"book1" : {
+			"title" : "2001",
+			"author" : "Arthur C. Clark",
+			"owned" : false,
+			"genre" : "sci-fi"
+		},
+		"book2" : {
+			"title" : "2002",
+			"author" : "Arthur C. Clark2",
+			"owned" : false,
+			"genre" : "sci-fi"
+		}
+	}
+}

@@ -5,6 +5,7 @@ export default function getBooks() {
     dispatch(getBooksRequestedAction());
     return database.ref('/').once('value', snap => {
       const books = snap.val(); // FB DB object
+      console.log("got the FB DB:" + books.slogan);
       dispatch(getBooksFulfilledAction(books))
     })
     .catch((error) => {
@@ -23,13 +24,13 @@ function getBooksRequestedAction() {
 
 function getBooksRejectedAction() {
   return {
-    type: 'GetInviteRejected'
+    type: 'GetBooksRejected'
   }
 }
 
 function getBooksFulfilledAction(books) {
   return {
-    type: 'GetInviteFulfilled',
+    type: 'GetBooksFulfilled',
     books: books
   };
 }

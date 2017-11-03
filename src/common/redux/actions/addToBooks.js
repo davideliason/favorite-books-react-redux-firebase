@@ -10,8 +10,15 @@ export default function addBook(title,author,owned,genre){
 				author,
 				owned,
 				genre
-			});
-	}
+			})
+			.then(() => {
+			    dispatch(addBookFulfilledAction())
+			})
+			.catch((error) => {
+      console.log(error);
+      dispatch(addBookRejectedAction());
+    });
+  }
 }
 
 function addBookRequestedAction(){
@@ -26,9 +33,8 @@ function addBookRejectedAction(){
 	}
 }
 
-function addBookFulfilledAction(book){
+function addBookFulfilledAction(){
 	return {
 		type: 'AddBookFulfilled',
-		book
 	}
 }

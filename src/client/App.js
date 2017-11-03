@@ -16,9 +16,9 @@ class App extends Component {
 
 	 componentDidMount() {
    		 this.props.getBooks(); // FB DB object set to redux
-   		 this.setState({
-   		 	currentUser: "David"
-   		 });
+   		 // this.setState({
+   		 // 	currentUser: "David"
+   		 // });
   	 }
   
      render() {
@@ -26,7 +26,7 @@ class App extends Component {
 	    return (
 	      <div className="App">
 	       	<h2> {this.state.currentUser} : {slogan} :)</h2>
-	       	<h3>Books</h3>
+	       	<h3>All Books</h3>
 
 	       	{books && books.length > 0 ? (
 	            <ul>

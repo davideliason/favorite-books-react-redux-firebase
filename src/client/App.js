@@ -1,14 +1,16 @@
 import React, { Component } from 'react';
 import './App.css';
+const colorStyle = {
+	color: 'green'
+}
 
 class App extends Component {
 	 componentDidMount() {
    		 this.props.getBooks(); // FB DB object set to redux
-   		 console.log("prop fx called");
   }
   
   render() {
-  	const {color,slogan,books} = this.props.book_state;
+  	const {slogan,books} = this.props.book_state;
     return (
       <div className="App">
        	<h2> {slogan} :)</h2>
@@ -17,7 +19,7 @@ class App extends Component {
             <ul>
               {books.map((book, index) => {
                 return (
-                  <li key={index}>
+                  <li key={index} style={colorStyle} >
                     {book.title} by {book.author}
                   </li>
                 );

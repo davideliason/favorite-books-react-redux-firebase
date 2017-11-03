@@ -8,8 +8,8 @@
 			"genre" : "sci-fi"
 		},
 		"book2" : {
-			"title" : "2002",
-			"author" : "Arthur C. Clark2",
+			"title" : "Dune",
+			"author" : "Frank Herbert",
 			"owned" : false,
 			"genre" : "sci-fi"
 		}

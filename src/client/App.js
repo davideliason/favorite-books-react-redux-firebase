@@ -9,14 +9,18 @@ class App extends Component {
 	constructor(){
 		super();
 		this.state = {
-			title : "coffeemug"
+			title : "coffeemug",
+			author: "someone",
+			owned: false,
+			genre: "fantasy"
 		};
 	}
    
 
 	 componentDidMount() {
    		 this.props.getBooks(); // FB DB object set to redux
-   		 this.props.onAddBook("frankenstein","spooky spock",false,'scifi');
+   		 // this.props.onAddBook("frankenstein","spooky spock",false,'scifi');//works
+   		 this.props.onAddBook(this.state.title,this.state.author,this.state.owned,this.state.genre)
   	 }
   
      render() {
@@ -24,7 +28,7 @@ class App extends Component {
 	  	const {slogan,books} = this.props.book_state;
 	    return (
 	      <div className="App">
-	       	<h2> {this.state.currentUser} : {slogan} :)</h2>
+	       	<h2>  {slogan} :)</h2>
 	       	<h3>All Books</h3>
 
 	       	{books && books.length > 0 ? (

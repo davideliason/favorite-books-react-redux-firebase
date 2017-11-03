@@ -16,13 +16,18 @@ export default function booksReducer(state={},action){
 		}
 
 		case 'GetBooksFulfilled': {
+			const {slogan, books} = action.book_state;
 			return Object.assign({},state,{
 				inProgress: false,
 				error: false,
-				books: action.books,
-				color: "green"
+				books: books,
+				color: "green",
+				slogan: slogan
 			});
 		}
+
+
+
 		default:
 			return state;
 	}

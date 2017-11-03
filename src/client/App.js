@@ -8,10 +8,12 @@ class App extends Component {
   }
   
   render() {
+  	const {color,books} = this.props.book_state;
     return (
       <div className="App">
        	<p>Hello I am App component</p>
-       	{this.props.book_state.color}
+       	<p>All systems are: {color}</p>
+
       </div>
     );
   }

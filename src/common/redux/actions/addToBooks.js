@@ -1,14 +1,16 @@
 import database from '../database.js';
 
 
-export default function addBook(title){
+export default function addBook(title,author,owned,genre){
 	return dispatch => {
 			dispatch(addBookRequestedAction());
 			const booksRef = database.ref('/books');
 			booksRef.push({
-				title : title
+				title,
+				author,
+				owned,
+				genre
 			});
-			console.log("title is:" + title);
 	}
 }
 

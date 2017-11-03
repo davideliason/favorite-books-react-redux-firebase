@@ -16,7 +16,7 @@ class App extends Component {
 
 	 componentDidMount() {
    		 this.props.getBooks(); // FB DB object set to redux
-   		 this.props.onAddBook(this.state.title);
+   		 this.props.onAddBook("frankenstein","spooky spock",false,'scifi');
   	 }
   
      render() {

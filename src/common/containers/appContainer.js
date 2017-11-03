@@ -12,7 +12,7 @@ function mapStateToProps(state){
 function mapDispatchToProps(dispatch){
 	return {
 		getBooks : () => dispatch(getBooks()),
-		onAddBook : (title) => dispatch(addBook(title))
+		onAddBook : (title,author,owned,genre) => dispatch(addBook(title,author,owned,genre))
 	}
 }
 

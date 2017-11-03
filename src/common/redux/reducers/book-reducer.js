@@ -37,7 +37,7 @@ export default function booksReducer(state={},action){
 			});
 		}
 
-		case 'AddUserRejected': {
+		case 'AddBookRejected': {
 			return Object.assign({},state,{
 				inProgress: false,
 				error: true

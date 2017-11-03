@@ -1,18 +1,23 @@
 import database from '../database.js';
 
+
 export default function addBook(book){
 	return dispatch => {
 			dispatch(addBookRequestedAction());
-		// return(
-
-			// DB action here
-			// dispatch(addBookFulfilledAction());
-
-			// )
-		// .catch((error) => {
-		// 	console.log(error);
-		// 	dispatch(addBookRejectedAction());
-		// })
+			const booksRef = database.ref('/books');
+			booksRef.push({
+				author: "me",
+				title: "me_title",
+				owned: true,
+				genre: "sci-fi"
+			})
+			.then(() => {
+			   dispatch(addBookFulfilledAction({book}));
+			})
+			.catch((error) => {
+				console.log(error);
+				dispatch(addBookRejectedAction());
+			})
 	}
 }
 
@@ -24,7 +29,7 @@ function addBookRequestedAction(){
 
 function addBookRejectedAction(){
 	return {
-		type: 'AddUserRejected'
+		type: 'AddBookRejected'
 	}
 }
 

@@ -1,23 +1,14 @@
 import database from '../database.js';
 
 
-export default function addBook(book){
+export default function addBook(title){
 	return dispatch => {
 			dispatch(addBookRequestedAction());
 			const booksRef = database.ref('/books');
 			booksRef.push({
-				author: "me",
-				title: "me_title",
-				owned: true,
-				genre: "sci-fi"
-			})
-			.then(() => {
-			   dispatch(addBookFulfilledAction({book}));
-			})
-			.catch((error) => {
-				console.log(error);
-				dispatch(addBookRejectedAction());
-			})
+				title : title
+			});
+			console.log("title is:" + title);
 	}
 }
 

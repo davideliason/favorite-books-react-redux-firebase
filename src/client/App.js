@@ -9,20 +9,18 @@ class App extends Component {
 	constructor(){
 		super();
 		this.state = {
-			currentUser : ""
+			title : "coffeemug"
 		};
 	}
    
 
 	 componentDidMount() {
    		 this.props.getBooks(); // FB DB object set to redux
-   		 this.props.addBook("me");
-   		 // this.setState({
-   		 // 	currentUser: "David"
-   		 // });
+   		 this.props.onAddBook('testblue');
   	 }
   
      render() {
+     	
 	  	const {slogan,books} = this.props.book_state;
 	    return (
 	      <div className="App">

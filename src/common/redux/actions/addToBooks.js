@@ -1,26 +1,36 @@
 import database from '../database.js';
 
-export default function addUser(name){
+export default function addBook(book){
 	return dispatch => {
-		dispatch(addUserRequestedAction());
+			dispatch(addBookRequestedAction());
+		// return(
+
+			// DB action here
+			// dispatch(addBookFulfilledAction());
+
+			// )
+		// .catch((error) => {
+		// 	console.log(error);
+		// 	dispatch(addBookRejectedAction());
+		// })
 	}
 }
 
-function addUserRequestedAction(){
+function addBookRequestedAction(){
 	return {
-		type: 'AddUserRequested'
+		type: 'AddBookRequested'
 	}
 }
 
-function addUserRejectedAction(){
+function addBookRejectedAction(){
 	return {
-		type: 'AddUserRejected';
+		type: 'AddUserRejected'
 	}
 }
 
-function addUserFulfilledAction(user){
+function addBookFulfilledAction(book){
 	return {
-		type: 'AddUserFulfilled',
-		user
+		type: 'AddBookFulfilled',
+		book
 	}
 }

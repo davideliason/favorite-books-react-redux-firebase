@@ -1,6 +1,7 @@
 import App from '../../client/App.js';
 import {connect} from 'react-redux';
 import getBooks from '../redux/actions/get_books.js';
+import addBook from '../redux/actions/addToBooks.js';
 
 function mapStateToProps(state){
 	return {
@@ -10,7 +11,8 @@ function mapStateToProps(state){
 
 function mapDispatchToProps(dispatch){
 	return {
-		getBooks : () => dispatch(getBooks())
+		getBooks : () => dispatch(getBooks()),
+		addBook : () => dispatch(addBook())
 	}
 }
 

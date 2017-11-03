@@ -11,16 +11,14 @@ class App extends Component {
   	const {color,slogan,books} = this.props.book_state;
     return (
       <div className="App">
-       	<p>Hello I am App component</p>
-       	<p>All systems are: {color}</p>
-       	<p>All systems are: {slogan}</p>
+       	<h2> {slogan} :)</h2>
        	<h3>Books</h3>
        	{books && books.length > 0 ? (
             <ul>
               {books.map((book, index) => {
                 return (
                   <li key={index}>
-                    {book.title}
+                    {book.title} by {book.author}
                   </li>
                 );
               })}

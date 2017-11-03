@@ -1,8 +1,8 @@
 import database from '../database.js';
 
-export default function addUser(){
+export default function addUser(name){
 	return dispatch => {
-		dispatch(addCurrentUserRequestedAction());
+		dispatch(addUserRequestedAction());
 	}
 }
 

@@ -5,32 +5,45 @@ const colorStyle = {
 }
 
 class App extends Component {
+
+	constructor(){
+		super();
+		this.state = {
+			currentUser : ""
+		};
+	}
+   
+
 	 componentDidMount() {
    		 this.props.getBooks(); // FB DB object set to redux
-  }
+   		 this.setState({
+   		 	currentUser: "David"
+   		 });
+  	 }
   
-  render() {
-  	const {slogan,books} = this.props.book_state;
-    return (
-      <div className="App">
-       	<h2> {slogan} :)</h2>
-       	<h3>Books</h3>
-       	{books && books.length > 0 ? (
-            <ul>
-              {books.map((book, index) => {
-                return (
-                  <li key={index} style={colorStyle} >
-                    {book.title} by {book.author}
-                  </li>
-                );
-              })}
-            </ul>
-          ) : null}
+     render() {
+	  	const {slogan,books} = this.props.book_state;
+	    return (
+	      <div className="App">
+	       	<h2> {this.state.currentUser} : {slogan} :)</h2>
+	       	<h3>Books</h3>
+
+	       	{books && books.length > 0 ? (
+	            <ul>
+	              {books.map((book, index) => {
+	                return (
+	                  <li key={index} style={colorStyle} >
+	                    {book.title} by {book.author}
+	                  </li>
+	                );
+	              })}
+	            </ul>
+	          ) : null}
 
 
-      </div>
-    );
-  }
-}
+	      </div>
+	    );
+	  }
+	}
 
 export default App;

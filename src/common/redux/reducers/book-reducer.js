@@ -30,12 +30,6 @@ export default function booksReducer(state={},action){
 			return newState;
 		}
 
-		
-     
-     
-
-
-
 		default:
 			return state;
 	}

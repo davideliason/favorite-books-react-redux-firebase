@@ -14,6 +14,18 @@ class App extends Component {
        	<p>Hello I am App component</p>
        	<p>All systems are: {color}</p>
        	<p>All systems are: {slogan}</p>
+       	<h3>Books</h3>
+       	{books && books.length > 0 ? (
+            <ul>
+              {books.map((book, index) => {
+                return (
+                  <li key={index}>
+                    {book.title}
+                  </li>
+                );
+              })}
+            </ul>
+          ) : null}
 
 
       </div>

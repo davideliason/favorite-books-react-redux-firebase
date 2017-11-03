@@ -17,14 +17,22 @@ export default function booksReducer(state={},action){
 
 		case 'GetBooksFulfilled': {
 			const {slogan, books} = action.book_state;
-			return Object.assign({},state,{
+			const newState = Object.assign({},state,{
 				inProgress: false,
 				error: false,
-				books: books,
 				color: "green",
 				slogan: slogan
 			});
+			newState.books = [];
+			if(books){
+				newState.books = Object.keys(books).map(k => books[k]);
+			}
+			return newState;
 		}
+
+		
+     
+     
 
 
 

@@ -51,6 +51,13 @@ export default function booksReducer(state={},action){
 			})
 		}
 
+		case 'bookAdded': {
+			return Object.assign({},state,{
+				inProgress: false,
+				error: false
+			});
+		}
+
 		default:
 			return state;
 	}

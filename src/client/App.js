@@ -27,10 +27,14 @@ class App extends Component {
 	  	const {slogan,books} = this.props.book_state;
 	    return (
 	      <div className="App">
-	       	<h2>  {slogan} :)</h2>
-	       	<h3>All Books</h3>
+            <div className="col-xs-6">
+	       	   <h2>  {slogan} :)</h2>
+	    	</div>
+            <div className="col-xs-6">
+	       	   <h3>All Books</h3>
+	       	</div>
 
-
+            <div className="col-xs-12">
                 <input
                   type="text"
                   value={this.state.title}
@@ -58,6 +62,7 @@ class App extends Component {
                 >
                   Add Book
                 </button>
+            </div>
 
 	       	{books && books.length > 0 ? (
 	            <ul>

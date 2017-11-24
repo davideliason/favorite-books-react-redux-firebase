@@ -1,5 +1,4 @@
 {
-	"slogan" : "read more",
 	"books" : {
 		"book1" : {
 			"title" : "2001",
@@ -8,10 +7,10 @@
 			"genre" : "sci-fi"
 		},
 		"book2" : {
-			"title" : "Dune",
-			"author" : "Frank Herbert",
+			"title" : "A Is For Alibi",
+			"author" : "Sue Grafton",
 			"owned" : false,
-			"genre" : "sci-fi"
+			"genre" : "mystery"
 		}
 	}
 }

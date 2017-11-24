@@ -13,10 +13,7 @@ let logger = createLogger({
 	duration:true
 });
 
-let initialState = {
-	currentUser : ''
-}
-const store = createStore(book_reducer, initialState, applyMiddleware(thunk,logger));
+const store = createStore(book_reducer, {}, applyMiddleware(thunk,logger));
 
 // store.dispatch({type:'SHOW_BOOKS'}); // works correctly
 ReactDOM.render(<Provider store={store}><AppContainer /></Provider>, document.getElementById('root'));

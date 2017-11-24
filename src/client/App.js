@@ -9,10 +9,10 @@ class App extends Component {
 	constructor(){
 		super();
 		this.state = {
-			title : "new_espresso",
-			author: "espresso_author",
+			title : "",
+			author: "",
 			owned: false,
-			genre: "fantasy"
+			genre: ""
 		};
 	}
    
@@ -26,32 +26,29 @@ class App extends Component {
      	
 	  	const {books} = this.props.books;
 	    return (
-	      <div className="App">
-            <div className="col-xs-6">
-	       	   <h2> My Books</h2>
-	    	</div>
-            <div className="col-xs-6">
-	       	   <h3>ok</h3>
-	       	</div>
-
+	      <div>
             <div className="col-xs-12">
                 <input
+                  placeholder = "title"
                   type="text"
                   value={this.state.title}
                   onChange={e => this.setState({ title: e.target.value })}
                 />
                 <input
                   type="text"
+                  placeholder = "author"
                   value={this.state.author}
                   onChange={e => this.setState({ author: e.target.value })}
                 />
                 <input
                   type="text"
+                  placeholder = "owned"
                   value={this.state.owned}
                   onChange={e => this.setState({ owned: e.target.value })}
                 />
                 <input
                   type="text"
+                  placeholder = "genre"
                   value={this.state.genre}
                   onChange={e => this.setState({ genre: e.target.value })}
                 />
@@ -75,7 +72,6 @@ class App extends Component {
 	              })}
 	            </ul>
 	          ) : null}
-
 
 	      </div>
 	    );

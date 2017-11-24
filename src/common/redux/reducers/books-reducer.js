@@ -50,10 +50,11 @@ export default function booksReducer(state={},action){
 		}
 
 		case 'bookAdded': {
-			return Object.assign({},state,{
-				inProgress: false,
-				error: false
-			});
+			const newState = Object.assign({}, state);
+      		newState.books = newState.books || [];
+      		newState.books = newState.books.slice();
+      		newState.books.push(action.book);
+      		return newState;
 		}
 
 		default:

@@ -12,7 +12,8 @@ class App extends Component {
 			title : "",
 			author: "",
 			owned: false,
-			genre: ""
+			genre: "",
+      filter: ""
 		};
 	}
    
@@ -52,12 +53,26 @@ class App extends Component {
                   value={this.state.genre}
                   onChange={e => this.setState({ genre: e.target.value })}
                 />
+                <input
+                  type="text"
+                  placeholder = "filter"
+                  value={this.state.filter}
+                  onChange={e => this.setState({ filter: e.target.value })}
+                />
                 <button
                   className="btn btn-primary"
                   type="button"
                   onClick={() => this.props.onAddBook(this.state.title,this.state.author,this.state.owned,this.state.genre)}
                 >
                   Add Book
+                </button>
+
+                <button
+                  className="btn btn-warning"
+                  type="button"
+                  onClick={() => this.props.onChangeFilter(this.state.filter)}
+                >
+                  Change Filter
                 </button>
             </div>
 

@@ -16,7 +16,7 @@ export default function booksReducer(state={},action){
 		}
 
 		case 'GetBooksFulfilled': {
-			const {books} = action.book_state;
+			const {books} = action.books;
 			const newState = Object.assign({},state,{
 				inProgress: false,
 				error: false

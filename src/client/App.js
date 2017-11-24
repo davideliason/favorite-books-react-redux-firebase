@@ -24,14 +24,14 @@ class App extends Component {
   
      render() {
      	
-	  	const {slogan,books} = this.props.book_state;
+	  	const {books} = this.props.books;
 	    return (
 	      <div className="App">
             <div className="col-xs-6">
-	       	   <h2>  {slogan} :)</h2>
+	       	   <h2> My Books</h2>
 	    	</div>
             <div className="col-xs-6">
-	       	   <h3>All Books</h3>
+	       	   <h3>ok</h3>
 	       	</div>
 
             <div className="col-xs-12">

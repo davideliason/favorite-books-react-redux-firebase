@@ -14,6 +14,5 @@ let logger = createLogger({
 });
 
 const store = createStore(rootReducer, {}, applyMiddleware(thunk,logger));
-store.dispatch({type: 'SET_FILTER', filter: 'SCI_FI'});
 // store.dispatch({type:'SHOW_BOOKS'}); // works correctly
 ReactDOM.render(<Provider store={store}><AppContainer /></Provider>, document.getElementById('root'));

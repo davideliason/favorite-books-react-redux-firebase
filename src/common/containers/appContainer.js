@@ -6,7 +6,7 @@ import watchIfBookAdded from '../redux/actions/watch_if_book_added.js';
 
 function mapStateToProps(state){
 	return {
-		book_state: state
+		books: state.books
 	}
 }
 

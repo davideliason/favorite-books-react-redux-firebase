@@ -24,7 +24,7 @@ class App extends Component {
   	 }
   
      render() {
-     	
+     	console.log("look: state: " + this.state.filter);
 	  	const {books} = this.props.books;
 	    return (
 	      <div>

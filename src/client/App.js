@@ -26,6 +26,7 @@ class App extends Component {
      render() {
      	console.log("look: state: " + this.state.filter);
 	  	const {books} = this.props.books;
+      const filteredBooks = this.props.filteredBooks;
 	    return (
 	      <div>
             <div className="col-xs-12">
@@ -87,6 +88,18 @@ class App extends Component {
 	              })}
 	            </ul>
 	          ) : null}
+
+            {filteredBooks && filteredBooks.length > 0 ? (
+              <ul>
+                {filteredBooks.map((book, index) => {
+                  return (
+                    <li key={index} style={colorStyle} >
+                      {book.title} by {book.author}
+                    </li>
+                  );
+                })}
+              </ul>
+            ) : null}
 
 	      </div>
 	    );

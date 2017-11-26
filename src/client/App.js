@@ -54,12 +54,7 @@ class App extends Component {
                   value={this.state.genre}
                   onChange={e => this.setState({ genre: e.target.value })}
                 />
-                <input
-                  type="text"
-                  placeholder = "filter"
-                  value={this.state.filter}
-                  onChange={e => this.setState({ filter: e.target.value })}
-                />
+               
                 <button
                   className="btn btn-primary"
                   type="button"
@@ -68,14 +63,9 @@ class App extends Component {
                   Add Book
                 </button>
 
-                <button
-                  className="btn btn-warning"
-                  type="button"
-                  onClick={() => this.props.onChangeFilter(this.state.filter)}
-                >
-                  Change Filter
-                </button>
+               
             </div>
+            <h3>All Books:</h3>
 
 	       	{books && books.length > 0 ? (
 	            <ul>
@@ -89,6 +79,19 @@ class App extends Component {
 	            </ul>
 	          ) : null}
             <h3>Filtered Books:</h3>
+             <input
+                  type="text"
+                  placeholder = "filter"
+                  value={this.state.filter}
+                  onChange={e => this.setState({ filter: e.target.value })}
+                />
+             <button
+                  className="btn btn-warning"
+                  type="button"
+                  onClick={() => this.props.onChangeFilter(this.state.filter)}
+                >
+                  Change Filter
+                </button>
 
             {filteredBooks && filteredBooks.length > 0 ? (
               <ul>

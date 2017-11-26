@@ -8,9 +8,9 @@ import changeFilter from '../redux/actions/changeFilter.js';
 const getFilteredBooks = (filter, books) => {
   switch (filter) {
     case 'SCIFI':
-      return books.filter(t => t.genre ==="SCIFI" )
-    case 'mystery':
-      return books.filter(t => t.genre ==="mystery")
+      return books.filter(t => t.genre ==="SCIFI"  || t.genre === 'scifi' || t.genre === 'sci-fi'  )
+    case 'MYSTERY':
+      return books.filter(t => t.genre ==="MYSTERY" || t.genre === 'mystery')
     case 'SHOW_ALL':
     default:
       return books

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import {Row,Col,Jumbotron} from 'react-bootstrap';
 const colorStyle = {
 	color: 'green'
 }
@@ -22,6 +23,18 @@ class App extends Component {
    		 this.props.getBooks(); // FB DB object set to redux
    		 // this.props.onAddBook("frankenstein","spooky spock",false,'scifi');//works
   	 }
+
+  handleOnChange = (e) => {
+    this.setState({
+      filter: e.target.value
+    })
+  }
+
+  handleOnChangeGenre = (e) => {
+    this.setState({
+      genre: e.target.value
+    })
+  }
   
      render() {
      	console.log("look: state: " + this.state.filter);
@@ -29,7 +42,13 @@ class App extends Component {
       const filteredBooks = this.props.filteredBooks;
 	    return (
 	      <div>
-            <div className="col-xs-12">
+              <Jumbotron>
+                <h3>Favorite Books</h3>
+              </Jumbotron>
+          <Row>
+            <Col xs={3}></Col>
+            <Col xs={6}>
+
                 <input
                   placeholder = "title"
                   type="text"
@@ -54,6 +73,10 @@ class App extends Component {
                   value={this.state.genre}
                   onChange={e => this.setState({ genre: e.target.value })}
                 />
+                <select defaultValue = "SCIFI" onChange={this.handleOnChangeGenre}>
+                  <option value="MYSTERY" >MYSTERY</option>
+                  <option value="SCIFI" >SCI-FI</option>
+                </select>
                
                 <button
                   className="btn btn-primary"
@@ -62,29 +85,50 @@ class App extends Component {
                 >
                   Add Book
                 </button>
+            </Col>
+            <Col xs={3}></Col>
+          </Row>
+          <Row></Row>
+          <Row>
+            <Col xs={3}>
+            </Col>
+            <Col xs={6}>
+               <h3>All Books:</h3>
+            </Col>
+            <Col xs={3}></Col>
+          </Row>
 
-               
-            </div>
-            <h3>All Books:</h3>
+           <Row>
+            <Col xs={3}></Col>
+            <Col xs={6}>
+               {books && books.length > 0 ? (
+              <ul>
+                {books.map((book, index) => {
+                  return (
+                    <li key={index} style={colorStyle} >
+                      {book.title} by {book.author}
+                    </li>
+                  );
+                })}
+              </ul>
+            ) : null}
+            </Col>
+            <Col xs={3}></Col>
+          </Row>
 
-	       	{books && books.length > 0 ? (
-	            <ul>
-	              {books.map((book, index) => {
-	                return (
-	                  <li key={index} style={colorStyle} >
-	                    {book.title} by {book.author}
-	                  </li>
-	                );
-	              })}
-	            </ul>
-	          ) : null}
-            <h3>Filtered Books:</h3>
-             <input
-                  type="text"
-                  placeholder = "MYSTERY OR SCIFI"
-                  value={this.state.filter}
-                  onChange={e => this.setState({ filter: e.target.value })}
-                />
+	       	
+            <Row>
+            <Col xs={3}>
+            </Col>
+            <Col xs={6}>
+               <h3>Filtered Books:</h3>
+               <select defaultValue = "MYSTERY" onChange={this.handleOnChange}>
+                <option value="MYSTERY" >MYSTERY</option>
+                <option value="SCIFI" >SCI-FI</option>
+                <option value="SHOW_ALL" >SHOW ALL</option>
+
+             </select>
+
              <button
                   className="btn btn-warning"
                   type="button"
@@ -92,6 +136,14 @@ class App extends Component {
                 >
                   Change Filter
                 </button>
+            </Col>
+            <Col xs={3}></Col>
+          </Row>
+
+          <Row>
+            <Col xs={3}></Col>
+            <Col xs={6}>
+
 
             {filteredBooks && filteredBooks.length > 0 ? (
               <ul>
@@ -104,7 +156,9 @@ class App extends Component {
                 })}
               </ul>
             ) : null}
-
+            </Col>
+            <Col xs={3}></Col>
+          </Row>
 	      </div>
 	    );
 	  }

@@ -12,4 +12,4 @@ Part of the challenge is working with code that I'd build three weeks ago, then 
 
 Conclusion:
 Heroku was working up until the very end, which is frustrating. Logs aren't helpful. So this is an area that I want to become better at.
-![Favorite Books]('./favorite-books.png'?raw=true "working")
+![Favorite Books](./favorite-books.png?raw=true "working")

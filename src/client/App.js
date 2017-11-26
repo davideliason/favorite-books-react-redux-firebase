@@ -81,7 +81,7 @@ class App extends Component {
             <h3>Filtered Books:</h3>
              <input
                   type="text"
-                  placeholder = "filter"
+                  placeholder = "MYSTERY OR SCIFI"
                   value={this.state.filter}
                   onChange={e => this.setState({ filter: e.target.value })}
                 />

@@ -15,7 +15,13 @@ Through trial and error becoming more comfortable with all these moving parts...
 
 Screenshot:
 
-![Favorite Books](./favorite-books.png?raw=true "working")
+Latest:
+![Favorite Books](./favorite-books2.png?raw=true "v2.0")
+
+
+Previous version:
+
+![Favorite Books](./favorite-books.png?raw=true "v1.0")
 
 ## To Implement Locally
 1. clone repo

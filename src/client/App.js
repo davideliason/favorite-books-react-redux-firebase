@@ -88,13 +88,14 @@ class App extends Component {
 	              })}
 	            </ul>
 	          ) : null}
+            <h3>Filtered Books:</h3>
 
             {filteredBooks && filteredBooks.length > 0 ? (
               <ul>
                 {filteredBooks.map((book, index) => {
                   return (
                     <li key={index} style={colorStyle} >
-                      {book.title} by {book.author}
+                      {book.title} by author {book.author}
                     </li>
                   );
                 })}

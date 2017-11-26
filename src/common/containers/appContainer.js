@@ -5,30 +5,24 @@ import addBook from '../redux/actions/addToBooks.js';
 import watchIfBookAdded from '../redux/actions/watch_if_book_added.js';
 import changeFilter from '../redux/actions/changeFilter.js';
 
-function getFilteredBooks(filter,books){
-	for(var i = 0; i < books.length; i++){
-		return books[i].genre === filter;
-	}
+const getFilteredBooks = (filter, books) => {
+  switch (filter) {
+    case 'SCIFI':
+      return books.filter(t => t.genre ==="SCIFI" )
+    case 'mystery':
+      return books.filter(t => t.genre ==="mystery")
+    case 'SHOW_ALL':
+    default:
+      return books
+  }
 }
 
 function mapStateToProps(state){
 	return {
 		books: state.books,
-		filteredBooks : [
-				{
-			"title" : "2001",
-			"author" : "Arthur C. Clark",
-			"owned" : false,
-			"genre" : "sci-fi"
-		},
-		        {
-			"title" : "A Is For Alibi",
-			"author" : "Sue Grafton",
-			"owned" : false,
-			"genre" : "mystery"
+		filteredBooks : getFilteredBooks(state.filter,state.books.books)
+			
 		}
-			]
-	}
 }
 
 function mapDispatchToProps(dispatch){

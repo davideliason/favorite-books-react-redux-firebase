@@ -11,6 +11,13 @@ Lessons Learned:
 Part of the challenge is working with code that I'd build three weeks ago, then refactoring it to embrace the lessons learned in the meantime. There were more moving parts in this app: dialing in the Firebase database, adding new values to that database as well as retrieving those values. Filtering values obtained from the database and passing those to components. Updating local state.
 
 Conclusion:
-Heroku was working up until the very end, which is frustrating. Also want to update to add dropdown menu for filters.
+Through trial and error becoming more comfortable with all these moving parts...
+
+Screenshot:
 
 ![Favorite Books](./favorite-books.png?raw=true "working")
+
+## To Implement Locally
+1. clone repo
+2. cd into that repo
+3. open terminal and $yarn start

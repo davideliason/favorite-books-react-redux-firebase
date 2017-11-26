@@ -67,12 +67,7 @@ class App extends Component {
                   value={this.state.owned}
                   onChange={e => this.setState({ owned: e.target.value })}
                 />
-                <input
-                  type="text"
-                  placeholder = "genre"
-                  value={this.state.genre}
-                  onChange={e => this.setState({ genre: e.target.value })}
-                />
+                
                 <select defaultValue = "SCIFI" onChange={this.handleOnChangeGenre}>
                   <option value="MYSTERY" >MYSTERY</option>
                   <option value="SCIFI" >SCI-FI</option>

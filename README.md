@@ -26,4 +26,5 @@ Previous version:
 ## To Implement Locally
 1. clone repo
 2. cd into that repo
-3. open terminal and $yarn start
+3. open terminal and $ npm install 
+4. $ yarn start

@@ -1,14 +1,14 @@
 import firebase from 'firebase';
 
-const config = {
-    apiKey: "AIzaSyAwVRa-WTujRd_0eZGOQsC1rERj4hqKTPc",
-    authDomain: "favorite-books-redux-fb.firebaseapp.com",
-    databaseURL: "https://favorite-books-redux-fb.firebaseio.com",
-    projectId: "favorite-books-redux-fb",
-    storageBucket: "favorite-books-redux-fb.appspot.com",
-    messagingSenderId: "1005823358182"
+var config = {
+    apiKey: "AIzaSyAiTmyH-nn81vbSDlEg1z9Fo23wLYZotY8",
+    authDomain: "favorite-books-redux-fb-9f34a.firebaseapp.com",
+    databaseURL: "https://favorite-books-redux-fb-9f34a.firebaseio.com",
+    projectId: "favorite-books-redux-fb-9f34a",
+    storageBucket: "",
+    messagingSenderId: "468590883701"
   };
-firebase.initializeApp(config);
+  firebase.initializeApp(config);
 const database = firebase.database();
 
 export default database;

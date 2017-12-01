@@ -44,15 +44,21 @@ class App extends Component {
 	      <div>
               <Jumbotron>
                 <h3>Favorite Books</h3>
-              </Jumbotron>
-          <Row>
-             <Col xs={3}></Col>
-             <Col xs={6}>
+                <Row>
+             <Col xs={2}></Col>
+             <Col xs={2}>
                 <a href="https://github.com/davideliason/favorite-books-react-redux-firebase">Repo</a>
-                <a href="https://github.com/davideliason/davideliason.github.io">Github Portfolio</a>
              </Col>
-             <Col xs={3}></Col>
+
+             <Col xs={2}></Col>
+              <Col xs={2}>
+                <a href="https://github.com/davideliason/davideliason.github.io">Github Portfolio</a>
+              </Col>
+             <Col xs={2}>
+             </Col>
           </Row>
+              </Jumbotron>
+          
           <Row>
             <Col xs={3}></Col>
             <Col xs={6}>
